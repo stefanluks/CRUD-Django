@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px black;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form p{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        form input, form span{
+            width: 70%;
+        }
+        form p label{
+            font-weight: bold;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            margin: 0px 5px;
+        }
+    </style>
+  </head>
+  <body>
+    <form class="form-floating" action="." method="post">
+        <h3>CADASTRAR</h3>
+        {% csrf_token %}
+        {{form.as_p}}
+        <p>
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <a href="{% url 'login' %}" class="text text-primary">voltar</a>
+        </p>
+    </form>
+    <script>
+        window.onload = () => {
+            console.log("teste");
+            let senha = document.querySelector("#id_password");
+            console.log(senha.type);
+            senha.type = "password";
+            console.log(senha.type);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

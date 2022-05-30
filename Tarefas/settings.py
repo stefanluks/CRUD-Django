@@ -1,5 +1,4 @@
 from pathlib import Path
-from xmlrpc.client import Boolean
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
